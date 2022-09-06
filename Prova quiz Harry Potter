@@ -1,0 +1,159 @@
+namespace ConsoleApp1
+{
+
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int i = 1;
+            do
+            {
+
+
+                string resposta1;
+                string resposta2;
+                string resposta3;
+                string resposta4;
+                string resposta5;
+                int acertos = 0;
+
+                //Tabela do inicio
+                Console.WriteLine("========================================================================================================================");
+                Console.WriteLine("                                  --------- BEM VINDO AO QUIZ ---------");
+                Console.WriteLine("                                  --------- SOBRE HARRY POTTER---------");
+                Console.WriteLine("========================================================================================================================");
+
+
+
+
+                //pergunta 1
+                Console.WriteLine("");
+                Console.WriteLine("Que feitiço Harry usou para matar Lord Voldemort?");
+                Console.WriteLine("A: Patronum Expecto <a>" + "       B: Expelliarmus<b>" + "     C: Feitiço da morte <c>" + "      D: Accio  <d>");
+                Console.WriteLine("");
+                resposta1 = Console.ReadLine();
+                if (resposta1 == "b")
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("parabéns você acertou!");
+                    acertos++;
+                }
+                else
+                {
+                    Console.WriteLine("Você errou, terminando");
+                    Environment.Exit(1);
+                }
+
+
+                perguntas();
+                //pergunta 2
+
+                Console.WriteLine("As lágrimas de qual animal são o único antídoto conhecido para o veneno do basilisco?");
+                Console.WriteLine("A: Phoenix <a>" + "     B:Gira-gira <b>" + "     C: Hipogrifo <c>"+ "      D: Bicho-papão <d>");
+                Console.WriteLine("");
+                resposta2 = Console.ReadLine();
+                if (resposta2 == "a")
+                {
+                    Console.WriteLine("Parabéns você acertou!");
+                    acertos++;
+                }
+                else
+                {
+                    Console.WriteLine("Você errou, terminando");
+                    Environment.Exit(1);
+                }
+
+
+                perguntas();
+                //pergunta 3
+
+                Console.WriteLine("Quando desenterrada, uma mandrágora fará o quê?");
+                Console.WriteLine("A: Dançar <a>" + "     B: Arrotar <b>" + "     C: Gritar <c>" + "      D: Rir <d>");
+                Console.WriteLine("");
+                resposta3 = Console.ReadLine();
+                if (resposta3 == "c")
+                {
+                    Console.WriteLine("Parabéns você acertou!");
+                    acertos++;
+                }
+                else
+                {
+                    Console.WriteLine("Você errou, terminando");
+                    Environment.Exit(1);
+                }
+        
+                
+                perguntas();
+                //pergunta 4
+
+                Console.WriteLine("'A inteligência além da medida é o maior tesouro do homem' é o lema de qual casa?");
+                Console.WriteLine("A: Grifinória <a>" + "     B: Lufa-lufa <b>" + "     C: Corvinal <c>" + "      D: Sonserina <d>");
+                Console.WriteLine("");
+                resposta4 = Console.ReadLine();
+                if (resposta4 == "c")
+                {
+                    Console.WriteLine("Parabéns você acertou!");
+                    acertos++;
+                }
+                else
+                {
+                    Console.WriteLine("Você errou, terminando");
+                    Environment.Exit(1);
+                }
+
+
+                perguntas();
+                //pergunta 5
+
+                Console.WriteLine("Qual era o nome do elfo doméstico da família Black?");
+                Console.WriteLine("A: Dobby <a>" + "     B: Winky <b>" + "     C: hóquei <c>" + "      D: Monstro <d>");
+                Console.WriteLine("");
+                resposta5 = Console.ReadLine();
+                if (resposta5 == "d")
+                {
+                    Console.WriteLine("Parabéns você acertou!");
+                    acertos++;
+                }
+                else
+                {
+                    Console.WriteLine("Você errou, terminando");
+                    Environment.Exit(1);
+                }
+
+                Console.WriteLine("Parabéns, você concluiu o quiz de harry potter, sua pontuação foi " + acertos);
+
+                break;
+
+
+                void perguntas()
+                {
+                    Console.WriteLine("");
+                    Console.WriteLine("deseja continuar <s> Sim ou <n> Não?");
+                    Console.WriteLine("");
+                    string resposta = Console.ReadLine();
+                    if(resposta == "n")
+                    {
+                        Console.Write("Que pena, espero que tenha gostado.");
+                        Environment.Exit(1);
+                    }
+                    else if (resposta == "s");
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Ok, iremos continuar agora.");
+                        Console.WriteLine("");
+                        
+                    }
+                    
+                }
+
+
+            } while (i < 10);
+
+
+        }
+
+    }
+
+
+
+} // Feito por Vanderlei Arjor de Arruda Filho e Alissa Teixeira Molina Santos
