@@ -16,6 +16,7 @@ namespace ConsoleApp1
                 string resposta4;
                 string resposta5;
                 int acertos = 0;
+                int erros = 0;
 
                 //Tabela do inicio
                 Console.WriteLine("========================================================================================================================");
@@ -27,44 +28,41 @@ namespace ConsoleApp1
 
 
                 //pergunta 1
+                Console.WriteLine("");//linha nova
+                Console.WriteLine("Que feitiço Harry usou para matar Lord Voldemort?"); //vai escrever a pergunta no console
+                Console.WriteLine("A: Patronum Expecto <a>" + "       B: Expelliarmus<b>" + "     C: Feitiço da morte <c>" + "      D: Accio  <d>"); // vai escrever as alternativas no console
                 Console.WriteLine("");
-                Console.WriteLine("Que feitiço Harry usou para matar Lord Voldemort?");
-                Console.WriteLine("A: Patronum Expecto <a>" + "       B: Expelliarmus<b>" + "     C: Feitiço da morte <c>" + "      D: Accio  <d>");
-                Console.WriteLine("");
-                resposta1 = Console.ReadLine();
-                if (resposta1 == "b")
+                resposta1 = Console.ReadLine(); // vai pegar a resposta que o jogador deu
+                if (resposta1 == "b") //armazena qual a resposta certa e se for igual ele armazena nos acertos, se for errado ele armazena nos erros
                 {
-                    Console.WriteLine("");
-                    Console.WriteLine("parabéns você acertou!");
-                    acertos++;
+                    acertou(); // otimização do código que armazena os acertos 
                 }
                 else
                 {
-                    Console.WriteLine("Você errou, terminando");
-                    Environment.Exit(1);
+                    errou();// otimização do código que armazena os erros
                 }
 
 
-                perguntas();
+                perguntas(); //otimização do código que pergunta se o jogador quer continuar
+
                 //pergunta 2
 
                 Console.WriteLine("As lágrimas de qual animal são o único antídoto conhecido para o veneno do basilisco?");
-                Console.WriteLine("A: Phoenix <a>" + "     B:Gira-gira <b>" + "     C: Hipogrifo <c>"+ "      D: Bicho-papão <d>");
+                Console.WriteLine("A: Phoenix <a>" + "     B:Gira-gira <b>" + "     C: Hipogrifo <c>" + "      D: Bicho-papão <d>");
                 Console.WriteLine("");
                 resposta2 = Console.ReadLine();
                 if (resposta2 == "a")
                 {
-                    Console.WriteLine("Parabéns você acertou!");
-                    acertos++;
+                    acertou();
                 }
                 else
                 {
-                    Console.WriteLine("Você errou, terminando");
-                    Environment.Exit(1);
+                    errou();
                 }
 
 
                 perguntas();
+
                 //pergunta 3
 
                 Console.WriteLine("Quando desenterrada, uma mandrágora fará o quê?");
@@ -73,17 +71,17 @@ namespace ConsoleApp1
                 resposta3 = Console.ReadLine();
                 if (resposta3 == "c")
                 {
-                    Console.WriteLine("Parabéns você acertou!");
-                    acertos++;
+                    acertou();
                 }
                 else
                 {
-                    Console.WriteLine("Você errou, terminando");
-                    Environment.Exit(1);
+                    errou();
+
                 }
-        
-                
+
+
                 perguntas();
+
                 //pergunta 4
 
                 Console.WriteLine("'A inteligência além da medida é o maior tesouro do homem' é o lema de qual casa?");
@@ -92,17 +90,16 @@ namespace ConsoleApp1
                 resposta4 = Console.ReadLine();
                 if (resposta4 == "c")
                 {
-                    Console.WriteLine("Parabéns você acertou!");
-                    acertos++;
+                    acertou();
                 }
                 else
                 {
-                    Console.WriteLine("Você errou, terminando");
-                    Environment.Exit(1);
+                    errou();
                 }
 
 
                 perguntas();
+
                 //pergunta 5
 
                 Console.WriteLine("Qual era o nome do elfo doméstico da família Black?");
@@ -111,13 +108,11 @@ namespace ConsoleApp1
                 resposta5 = Console.ReadLine();
                 if (resposta5 == "d")
                 {
-                    Console.WriteLine("Parabéns você acertou!");
-                    acertos++;
+                    acertou();
                 }
                 else
                 {
-                    Console.WriteLine("Você errou, terminando");
-                    Environment.Exit(1);
+                    errou();
                 }
 
                 Console.WriteLine("Parabéns, você concluiu o quiz de harry potter, sua pontuação foi " + acertos);
@@ -125,27 +120,42 @@ namespace ConsoleApp1
                 break;
 
 
-                void perguntas()
+                void perguntas() // quando chamado ele vai escrever as frases dentro das chaves, perguntando se o jogador quer continuar
                 {
                     Console.WriteLine("");
                     Console.WriteLine("deseja continuar <s> Sim ou <n> Não?");
                     Console.WriteLine("");
                     string resposta = Console.ReadLine();
-                    if(resposta == "n")
+                    if (resposta == "n") // se a resposta for não o console fedchará
                     {
                         Console.Write("Que pena, espero que tenha gostado.");
                         Environment.Exit(1);
                     }
-                    else if (resposta == "s");
+                    else if (resposta == "s") ; // se for sim o quiz continuará
                     {
                         Console.WriteLine("");
                         Console.WriteLine("Ok, iremos continuar agora.");
                         Console.WriteLine("");
-                        
+
                     }
-                    
+
                 }
 
+                void acertou() //quando chamado ele vai escrever as frases dentro das chaves, mostrando se o jogador acertou 
+                {
+                    Console.WriteLine("Parabéns você acertou");
+                    Console.WriteLine("Iremos continuar agora!");
+                    Console.WriteLine("");
+                    acertos++;
+                }
+
+                void errou() //quando chamado ele vai escrever as frases dentro das chaves, mostrando se o jogador errou
+                {
+                    Console.WriteLine("Infezlizmente você errou");
+                    Console.WriteLine("Iremos continuar agora!");
+                    Console.WriteLine("");
+                    erros++;
+                }
 
             } while (i < 10);
 
