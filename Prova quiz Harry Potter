@@ -1,3 +1,5 @@
+using System;
+
 namespace ConsoleApp1
 {
 
@@ -115,7 +117,7 @@ namespace ConsoleApp1
                     errou();
                 }
 
-                Console.WriteLine("Parabéns, você concluiu o quiz de harry potter, sua pontuação foi " + acertos);
+                Console.WriteLine("Parabéns, você concluiu o quiz de harry potter, sua pontuação foi " + acertos +  " acertos e de " + erros + " erros");// vai te mostrar a quantidade acertos e erros
 
                 break;
 
